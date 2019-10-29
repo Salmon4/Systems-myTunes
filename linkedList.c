@@ -34,6 +34,28 @@ struct song_node * insert_alpha(struct song_node *linkedList, char newName[], ch
   }
 }
 
+struct song_node * findnode (struct song_node * node, char title [] , char writer[]) {
+  struct song_node * start = node;
+  while (start != NULL) {
+    if (strcmp (start -> name, title) == 0 && strcmp (start -> artist, writer)) {
+      return start;
+    }
+    start = start -> next;
+  }
+  return NULL;
+}
+
+struct song_node * findnodeArtist (struct song_node * node, char title [] , char writer[]) {
+  struct song_node * start = node;
+  while (start != NULL) {
+    if (strcmp (start -> artist, writer)) {
+      return start;
+    }
+    start = start -> next;
+  }
+  return NULL;
+}
+
 void insert_alpha (struct song_node *linkedlist, char newName[], char newArtist[]) {
   struct song_node *start = linkedlist;
   char artistandname [] = newName + newArtist;
