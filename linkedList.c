@@ -33,3 +33,16 @@ struct song_node * insert_alpha(struct song_node *linkedList, char newName[], ch
     if (artistAndname )
   }
 }
+
+/*
+void insert_alpha (struct song_node *linkedlist, char newName[], char newArtist[]) {
+  struct song_node *start = linkedlist;
+  char artistandname [] = newName + newArtist;
+  while (strcmp ( (start -> artist + start -> name),artistandname) < 0) {//if start is first before what you want to insert
+    start = start -> next; //keep going through list until you find the place you want to insert
+  }
+  struct song_node * was = start -> next; //what is going to be after this song
+  start -> next = linkedlist; //inserting song where it should be
+  linkedlist -> next = was; //linking song to the next one
+}
+*/
