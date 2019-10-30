@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "linkedList.h"
 
 struct song_node{
   char name[100];
@@ -37,7 +38,7 @@ struct song_node * insert_alpha(struct song_node *linkedList, char newName[], ch
 struct song_node * findnode (struct song_node * node, char title [] , char writer[]) {
   struct song_node * start = node;
   while (start != NULL) {
-    if (strcmp (start -> name, title) == 0 && strcmp (start -> artist, writer)) {
+    if (strcmp (start -> name, title) == 0 && strcmp (start -> artist, writer) == 0) {
       return start;
     }
     start = start -> next;
