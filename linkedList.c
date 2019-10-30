@@ -2,12 +2,6 @@
 #include <stdlib.h>
 #include "linkedList.h"
 
-struct song_node{
-  char name[100];
-  char artist[100];
-  struct song_node *next;
-}
-
 void print_list(struct song_node *linkedList){
   struct song_node *start = linkedList;
   while (start != NULL){
@@ -55,6 +49,50 @@ struct song_node * findnodeArtist (struct song_node * node, char title [] , char
     start = start -> next;
   }
   return NULL;
+}
+
+struct song_node * randomElement (struct song_node * node){
+  struct song_node * start1 = node;
+  int length = 0;
+  while (start != NULL) {
+    length ++;
+    start = start -> next;
+  }
+  int rand = random () % length;
+  struct song_node *start2 = node;
+  while (rand >  0) {
+    start2 = start2 -> next;
+    rand --;
+  }
+  return start2;
+}
+
+void deleteSpecific (struct song_node * list, struct song_node *target) {
+  struct song_node * start = list;
+  struct song_node * current = list;
+  if (start != NULL){
+    return list;
+  }
+  if (strcomp(current->artist,target->artist) == 0 && strcomp(current->name,target->name) == 0){
+    free(start);
+    list = list->next;
+  }
+  while(strcomp(start->artist,target->artist) == 0 && strcomp(start->name,target->name) {
+    current = start;
+    start = start->next;
+  }
+  current->next = start->next;
+  free(start);
+}
+
+void free_list (struct song_node * list) {
+  struct song_node *start = list;
+  struct song_node *temp = list;
+  while (start != NULL) {
+    start = start -> next;
+    free (temp);
+    temp = start;
+  }
 }
 
 void insert_alpha (struct song_node *linkedlist, char newName[], char newArtist[]) {
