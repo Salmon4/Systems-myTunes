@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "linkedList.h"
+#include <string.h>
 
 void print_list(struct song_node *linkedList){
   struct song_node *start = linkedList;
@@ -12,8 +13,10 @@ void print_list(struct song_node *linkedList){
 
 struct song_node * insert_front(struct song_node *linkedList, char newName[], char newArtist[]){
   struct song_node *input = malloc(sizeof(struct song_node));
-  input->name = newName;
-  input->artist = newArtist;
+  strcpy (input -> name, newName);
+  strcpy (input -> artist, newArtist);
+  //input->name = newName;
+  //input->artist = newArtist;
   return input;
 }
 
