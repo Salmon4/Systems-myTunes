@@ -95,6 +95,7 @@ void free_list (struct song_node * list) {
   }
 }
 
+/*
 void insert_alpha (struct song_node *linkedlist, char newName[], char newArtist[]) {
   struct song_node *start = linkedlist;
   char artistandname [] = newName + newArtist;
@@ -105,3 +106,4 @@ void insert_alpha (struct song_node *linkedlist, char newName[], char newArtist[
   start -> next = linkedlist; //inserting song where it should be
   linkedlist -> next = was; //linking song to the next one
 }
+*/
