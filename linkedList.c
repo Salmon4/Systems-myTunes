@@ -20,15 +20,25 @@ struct song_node * insert_front(struct song_node *linkedList, char newName[], ch
   return input;
 }
 
-struct song_node * insert_alpha(struct song_node *linkedList, char newName[], char newArtist[]){
+void insert_alpha(struct song_node *linkedList, char newName[], char newArtist[]){
   struct song_node *input = malloc(sizeof(struct song_node));
-  input->artist = newArtist;
-  input->name = newName;
+  strcpy(input->artist, newArtist);
+  strcpy(input->name, newName);
   struct song_node *start = linkedList;
+  int found = 0;
+  char artistAndNameInput[] = str(input->artist,input->name);
+  struct song_node *before = *linkedList;
   while (start != NULL & found == 0){
-    char artistAndname[] = start->artist + start->name;
-    char artistAndnameInput[] = input->artist + input->name;
-    if (artistAndname )
+    char artistAndName[] = strcat(start->artist,start->name);
+    if (strcmp(artistAndName,artistAndnameInput) > 0){
+      before->next = input;
+      input-> = start;
+      found = 1;
+    }
+    start = start->next;
+  }
+  if (found == 0){
+    start->next = input;
   }
 }
 
