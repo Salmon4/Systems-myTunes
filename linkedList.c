@@ -6,17 +6,16 @@
 void print_list(struct song_node *linkedList){
   struct song_node *start = linkedList;
   while (start != NULL){
-    printf("%s : %s |", start->name, start->artist);
+    printf("%s : %s |", start->artist, start->name);
     start = start->next;
   }
 }
 
 struct song_node * insert_front(struct song_node *linkedList, char newName[], char newArtist[]){
   struct song_node *input = malloc(sizeof(struct song_node));
-  strcpy (input -> name, newName);
-  strcpy (input -> artist, newArtist);
-  //input->name = newName;
-  //input->artist = newArtist;
+  strcpy(input->name, newName);
+  strcpy(input->artist, newArtist);
+  input->next = linkedList;
   return input;
 }
 
