@@ -26,15 +26,18 @@ void insert_alpha(struct song_node *linkedList, char newName[], char newArtist[]
   strcpy(input->name, newName);
   struct song_node *start = linkedList;
   int found = 0;
-  char artistAndNameInput[] = str(input->artist,input->name);
-  struct song_node *before = *linkedList;
+  char artistAndNameInput[100];
+  strcpy(artistAndNameInput, strcat(newArtist, newName));
+  struct song_node *before = linkedList;
   while (start != NULL & found == 0){
-    char artistAndName[] = strcat(start->artist,start->name);
-    if (strcmp(artistAndName,artistAndnameInput) > 0){
+    char artistAndName[100];
+    strcpy(artistAndName,strcat(start->artist,start->name));
+    if (strcmp(artistAndName,artistAndNameInput) > 0){
       before->next = input;
-      input-> = start;
+      input->next = start;
       found = 1;
     }
+    before = start;
     start = start->next;
   }
   if (found == 0){
@@ -65,7 +68,7 @@ struct song_node * findnodeArtist (struct song_node * node, char title [] , char
 }
 
 struct song_node * randomElement (struct song_node * node){
-  struct song_node * start1 = node;
+  struct song_node * start = node;
   int length = 0;
   while (start != NULL) {
     length ++;
@@ -81,21 +84,29 @@ struct song_node * randomElement (struct song_node * node){
 }
 
 void deleteSpecific (struct song_node * list, struct song_node *target) {
-  struct song_node * start = list;
+  struct song_node * before = list;
   struct song_node * current = list;
+  while (strcmp(current->artist,target->artist) != 0 && strcmp(current->name,target->name) != 0){
+    before = current;
+    current = current->next;
+  }
+  before = current->next;
+  free(current);
+  /**
   if (start != NULL){
     return list;
   }
-  if (strcomp(current->artist,target->artist) == 0 && strcomp(current->name,target->name) == 0){
+  if (strcmp(current->artist,target->artist) == 0 && strcmp(current->name,target->name) == 0){
     free(start);
     list = list->next;
   }
-  while(strcomp(start->artist,target->artist) == 0 && strcomp(start->name,target->name) {
+  while(strcmp(start->artist,target->artist) == 0 && strcmp(start->name,target->name) == 0){
     current = start;
     start = start->next;
   }
   current->next = start->next;
   free(start);
+  **/
 }
 
 void free_list (struct song_node * list) {
