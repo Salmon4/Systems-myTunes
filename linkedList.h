@@ -13,7 +13,7 @@ void insert_alpha(struct song_node *linkedList, char newName[], char newArtist[]
 
 struct song_node * findnode (struct song_node * node, char title [] , char writer[]);
 
-struct song_node * findnodeArtist (struct song_node * node, char title [] , char writer[]);
+struct song_node * findnodeArtist (struct song_node * node, char writer[]);
 
 struct song_node * randomElement (struct song_node * node);
 void deleteSpecific (struct song_node * list, struct song_node *target);

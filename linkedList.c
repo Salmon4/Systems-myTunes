@@ -56,10 +56,10 @@ struct song_node * findnode (struct song_node * node, char title [] , char write
   return NULL;
 }
 
-struct song_node * findnodeArtist (struct song_node * node, char title [] , char writer[]) {
+struct song_node * findnodeArtist (struct song_node * node, char writer[]) {
   struct song_node * start = node;
   while (start != NULL) {
-    if (strcmp (start -> artist, writer)) {
+    if (strcmp (start -> artist, writer) == 0) {
       return start;
     }
     start = start -> next;
