@@ -124,11 +124,11 @@ struct song_node * free_list (struct song_node * list) {
   struct song_node *temp = list;
   while (start != NULL) {
     start = start -> next;
-    printf ("freeing node: "); print_node (temp); printf ("\n");
+    //printf ("freeing node: "); print_node (temp); printf ("\n");
     free (temp);
     temp = start;
   }
-  return list;
+  return start;
 }
 
 /*
