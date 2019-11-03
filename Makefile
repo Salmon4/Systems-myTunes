@@ -1,11 +1,14 @@
-all: linkedList.o main.o
-	gcc -o program linkedList.o main.o
+all: main.o library.o linkedList.o
+	gcc -o program main.o library.o linkedList.o
+
+main.o: main.c library.h
+	gcc -c main.c
+
+library.o: library.c library.h linkedList.h
+	gcc -c library.c
 
 linkedList.o: linkedList.c linkedList.h
 	gcc -c linkedList.c
-
-main.o: main.c linkedList.h
-	gcc -c main.c
 
 run:
 	./program

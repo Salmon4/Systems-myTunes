@@ -1,6 +1,8 @@
-#include "linkedList.c"
+//#include "linkedList.c"
 #include "library.h"
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 int size (struct song_node *start [] ) {
   int ans = 0;
   while (start [ans] != NULL) {
@@ -108,8 +110,5 @@ void shuffle (struct song_node *l[]){
   printf("\n");
 }
 
-int main(){
-  return 1;
-}
 //void delete (struct song_node *l[], struct song_node *target);
 //void clear (struct song_node *l[]);
