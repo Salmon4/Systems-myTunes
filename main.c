@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "linkedList.h"
 
-int main () {
+void test_songnode () {
   printf ("LINKED LIST TESTS \n========================================================\n");
   printf ("Testing print_list:\n");
   struct song_node * test;
@@ -118,7 +118,31 @@ int main () {
   print_list (test);  printf("\n\n");
   printf ("Testing free list\n");
   test = free_list (test);
+  printf ("List: ");
   print_list (test);
+}
 
+void test_library () {
+  printf ("\nMUSIC LIBRARY TESTS\n");
+  printf("========================================================\n");
+
+  struct song_node * lib [27];
+  struct song_node * test1;
+    insert_front (test1, "moo", "cow");
+    insert_front (test1, "cluck", "chicken");
+    insert_front (test1, "oink", "pig");
+    insert_front (test1, "baaa", "sheep");
+  struct song_node * test2;
+    insert_front (test2, "woof", "dog");
+    insert_front (test2, "meow", "cat");
+    insert_front (test2, "ssss", "snake");
+
+  add_node (lib,test1);   add_node (lib,test2);
+  printlibrary (lib);
+}
+
+int main () {
+  test_songnode ();
+  test_library ();
   return 0;
 }
