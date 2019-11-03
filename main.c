@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "linkedList.h"
+#include "library.h"
 
 void test_songnode () {
   printf ("LINKED LIST TESTS \n========================================================\n");
