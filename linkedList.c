@@ -97,8 +97,6 @@ void deleteSpecific (struct song_node * list, struct song_node *target) {
     before = current;
     current = current->next;
   }
-  before->next = current->next;
-  free(current);
   /**
   if (start != NULL){
     return list;
