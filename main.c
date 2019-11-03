@@ -30,8 +30,25 @@ int main () {
   printf("\n");
 
   printf("========================================================\n");
-
+  printf("This is the list:");
+  print_list(test);
+  printf("\n");
   printf("Testing find node: \n");
+  printf("Looking for woof by dog\n");
+  print_node(findnode(test,"woof","dog"));
+  printf("\n");
+  printf("Looking for meow by cat\n");
+  print_node(findnode(test,"meow","cat"));
+  printf("\n");
+  printf("Looking for woof by bear\n");
+  print_node(findnode(test,"woof","bear"));
+  printf("\n");
+  printf("Looking for oof by dog\n");
+  print_node(findnode(test,"oof","dog"));
+  printf("\n");
+  printf("Looking for oof by bear\n");
+  print_node(findnode(test,"oof","bear"));
+  printf("\n");
 
   return 0;
 }
