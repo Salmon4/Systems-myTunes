@@ -44,17 +44,11 @@ struct song_node * insert_alpha(struct song_node *linkedList, char newName[], ch
     return input;
   }
   while (start != NULL & found == 0){
-    //print_node(input);
     char artistAndName[100];
     artistAndName[0] = '\0';
     strcat(artistAndName, start->artist);
     strcat(artistAndName, start->name);
-    printf(artistAndName);
-    printf("   ");
-    printf(artistAndNameInput);
-    printf("\n");
     if (strcmp(artistAndName,artistAndNameInput) > 0){
-      //print_node(input);
       if (before != NULL){
         before->next = input;
       }
@@ -72,16 +66,6 @@ struct song_node * insert_alpha(struct song_node *linkedList, char newName[], ch
     input->next = NULL;
 
   return linkedList;
-  /**
-  struct song_node *input = malloc(sizeof(struct song_node));
-  strcpy(input->artist, newArtist);
-  strcpy(input->name, newName);
-  char new[100];
-  strcat(new,newArtist);
-  strcat(new,newName);
-  printf(new);
-  return input;
-  **/
 }
 
 struct song_node * findnode (struct song_node * node, char title [] , char writer[]) {

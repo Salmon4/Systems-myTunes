@@ -11,22 +11,26 @@ int main () {
   struct song_node *test2;
   printf("Current list:\n");
   print_list(test2);
-
+  printf("\nadding song1 by artist1 \n");
   test2 = insert_alpha(test2,"song1","artist1");
-
+  print_list(test2);
+  printf("\nadding song2 by artist1 \n");
   test2 = insert_alpha(test2,"song2","artist1");
-  //print_node(test2);
   print_list(test2);
   printf("\n");
+  printf("adding song0 by artist1 \n");
   test2 = insert_alpha(test2,"song0","artist1");
   print_list(test2);
   printf("\n");
+  printf("adding song1 by artist2 \n");
   test2 = insert_alpha(test2,"song1","artist2");
   print_list(test2);
   printf("\n");
+  printf("adding song2 by artist2 \n");
   test2 = insert_alpha(test2,"song2","artist2");
   print_list(test2);
   printf("\n");
+  printf("adding song0 by artist2 \n");
   test2 = insert_alpha(test2,"song0","artist2");
 
   //test2 = insert_alpha(test2,"song3","artist2");
