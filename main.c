@@ -7,7 +7,33 @@ int main () {
   printf ("Testing print_list:\n");
   struct song_node * test;
   print_list (test);
-  printf("\nAdding to list: \n");
+  printf("\nAdding to list using insert_alpha: \n");
+  struct song_node *test2;
+  printf("Current list:\n");
+  print_list(test2);
+
+  test2 = insert_alpha(test2,"song1","artist1");
+
+  test2 = insert_alpha(test2,"song2","artist1");
+  //print_node(test2);
+  print_list(test2);
+  printf("\n");
+  test2 = insert_alpha(test2,"song0","artist1");
+  print_list(test2);
+  printf("\n");
+  test2 = insert_alpha(test2,"song1","artist2");
+  print_list(test2);
+  printf("\n");
+  test2 = insert_alpha(test2,"song2","artist2");
+  print_list(test2);
+  printf("\n");
+  test2 = insert_alpha(test2,"song0","artist2");
+
+  //test2 = insert_alpha(test2,"song3","artist2");
+  printf("\n");
+  print_list(test2);
+    printf("\n========================================================\n");
+  printf("\nAdding to new list using insert_front: \n");
   printf("Inserting moo by cow\n");
   test = insert_front(test, "moo", "cow");
   print_list(test);
@@ -84,12 +110,10 @@ int main () {
   printf ("\nRemoving [quack : duck]\n\t");
   deleteSpecific (test, findnodeArtist (test, "quack"));
   print_list (test);
-
-  printf("========================================================\n");
   printf ("This is the list: \n");
   print_list (test);  printf("\n\n");
   printf ("Testing free list\n");
-  test = free_list (test); 
+  test = free_list (test);
   print_list (test);
 
   return 0;

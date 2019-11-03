@@ -26,29 +26,62 @@ struct song_node * insert_front(struct song_node *linkedList, char newName[], ch
   return input;
 }
 
-void insert_alpha(struct song_node *linkedList, char newName[], char newArtist[]){
+struct song_node * insert_alpha(struct song_node *linkedList, char newName[], char newArtist[]){
+
+
   struct song_node *input = malloc(sizeof(struct song_node));
   strcpy(input->artist, newArtist);
   strcpy(input->name, newName);
-  struct song_node *start = linkedList;
   int found = 0;
   char artistAndNameInput[100];
-  strcpy(artistAndNameInput, strcat(newArtist, newName));
-  struct song_node *before = linkedList;
+  artistAndNameInput[0] = '\0';
+  strcat(artistAndNameInput,newArtist);
+  strcat(artistAndNameInput,newName);
+  struct song_node *start = linkedList;
+  struct song_node *before = NULL;
+  if (start == NULL){
+    input->next = start;
+    return input;
+  }
   while (start != NULL & found == 0){
+    //print_node(input);
     char artistAndName[100];
-    strcpy(artistAndName,strcat(start->artist,start->name));
+    artistAndName[0] = '\0';
+    strcat(artistAndName, start->artist);
+    strcat(artistAndName, start->name);
+    printf(artistAndName);
+    printf("   ");
+    printf(artistAndNameInput);
+    printf("\n");
     if (strcmp(artistAndName,artistAndNameInput) > 0){
-      before->next = input;
+      //print_node(input);
+      if (before != NULL){
+        before->next = input;
+      }
       input->next = start;
       found = 1;
+      if (before != NULL){
+        return linkedList;
+      }
+      return input;
     }
     before = start;
     start = start->next;
   }
-  if (found == 0){
-    start->next = input;
-  }
+    before->next = input;
+    input->next = NULL;
+
+  return linkedList;
+  /**
+  struct song_node *input = malloc(sizeof(struct song_node));
+  strcpy(input->artist, newArtist);
+  strcpy(input->name, newName);
+  char new[100];
+  strcat(new,newArtist);
+  strcat(new,newName);
+  printf(new);
+  return input;
+  **/
 }
 
 struct song_node * findnode (struct song_node * node, char title [] , char writer[]) {
