@@ -110,5 +110,14 @@ void shuffle (struct song_node *l[]){
   printf("\n");
 }
 
-//void delete (struct song_node *l[], struct song_node *target);
+void delete (struct song_node *l[], struct song_node *target){
+  int i;
+  int removed = 0;
+  for (i = 0; i < size(l) & removed == 0; i++){
+    if (findnode(l[i],target->name,target->artist) != NULL){
+      deleteSpecific(l[i],target);
+      removed = 1;
+    }
+  }
+}
 //void clear (struct song_node *l[]);
