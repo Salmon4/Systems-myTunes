@@ -81,6 +81,9 @@ int main () {
   printf ("\nRemoving [bird : chirp]\n\t");
   deleteSpecific (test, findnodeArtist (test, "bird"));
   print_list (test);
+  printf ("\nRemoving [quack : duck]\n\t");
+  deleteSpecific (test, findnodeArtist (test, "quack"));
+  print_list (test);
 
 
 
