@@ -8,7 +8,7 @@ void print_list(struct song_node *linkedList);
 
 struct song_node * insert_front(struct song_node *linkedList, char newName[], char newArtist[]);
 
-void insert_alpha(struct song_node *linkedList, char newName[], char newArtist[]);
+struct song_node * insert_alpha(struct song_node *linkedList, char newName[], char newArtist[]);
 //void insert_alpha (struct song_node *linkedlist, char newName[], char newArtist[]);
 
 struct song_node * findnode (struct song_node * node, char title [] , char writer[]);
