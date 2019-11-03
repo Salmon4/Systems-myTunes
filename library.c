@@ -81,11 +81,11 @@ void printlibrary (struct song_node *l[]){
   for (i = 0; i <size(l); i++){
     struct song_node * currentPlayList = l[i]; //first node of linkedList
     struct song_node * start = &currentPlayList[0];
-    char firstArtist[100];
-    strcat(firstArtist,start->artist);
-    char firstLetter[100];
-    strcat(firstLetter,firstArtist);
-    printf("%s list\n", firstLetter);
+    //char firstArtist[100] = "\0";
+    //strcat(firstArtist,start->artist);
+    //char firstLetter[100] = "\0";
+    //strcat(firstLetter,firstArtist);
+    //printf("%s list\n", firstLetter);
     while(start != NULL){
       printf("%s : %s | ", start->artist, start->name);
       start=start->next;
