@@ -85,7 +85,13 @@ int main () {
   deleteSpecific (test, findnodeArtist (test, "quack"));
   print_list (test);
 
-
+  printf("========================================================\n");
+  printf ("This is the list: \n");
+  print_list (test);  printf("\n\n"); 
+  printf ("Testing free list\n");
+  free_list (test);
+  printf ("list after free_list: ");
+  print_list (test);
 
   return 0;
 }
