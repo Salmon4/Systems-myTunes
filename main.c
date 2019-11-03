@@ -13,5 +13,14 @@ int main () {
   printf("\n");
   test = insert_front(test, "woof", "dog");
   print_list(test);
+  printf("\n");
+  test = insert_front(test, "quack", "duck");
+  print_list(test);
+  printf("\n");
+  test = insert_front(test, "meow", "cat");
+  print_list(test);
+  printf("\n");
+  test = insert_front(test, "????", "fox");
+  print_list(test);
   return 0;
 }
