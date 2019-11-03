@@ -91,12 +91,17 @@ struct song_node * randomElement (struct song_node * node){
 }
 
 void deleteSpecific (struct song_node * list, struct song_node *target) {
-  struct song_node * before = list;
-  struct song_node * current = list;
-  while (strcmp(current->artist,target->artist) != 0 & strcmp(current->name,target->name) != 0){
-    before = current;
-    current = current->next;
+  if (target != NULL && findnode (list, target -> name, target -> artist) != NULL) {
+    struct song_node * before = list;
+    struct song_node * current = list;
+    while (strcmp(current->artist,target->artist) != 0 & strcmp(current->name,target->name) != 0){
+      before = current;
+      current = current->next;
+    }
+    before->next = current->next;
+    free(current);
   }
+
   /**
   if (start != NULL){
     return list;
