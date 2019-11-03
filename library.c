@@ -1,7 +1,7 @@
 #include "linkedList.c"
 #include "library.h"
 
-int size (struct song_node *l [] start ) {
+int size (struct song_node *start [] ) {
   int ans = 0;
   while (start [ans] != NULL) {
     ans ++;
@@ -38,7 +38,7 @@ struct song_node * search_artist (struct song_node *l[], char writer []) {
 
 void print_letter (struct song_node *l[], char c) {
   int i,j;
-  prinft ("All entries starting with %c", c);
+  printf ("All entries starting with %c", c);
   for (i = 0; i < size (l); i ++) {
     struct song_node * now = l[i];
     while (now != NULL) {
@@ -62,18 +62,37 @@ void print_artist (struct song_node *l[], char writer[]){
   if (exist == 0){
     printf("Artist not found! ");
   }
-
-  for (j = 0; j < size(l) & exist == 1, j++){
-    struct song_node * start = l[j];
+  for (j = 0; j < size(l) & exist == 1; j++){
+    struct song_node * currentPlaylist = l[j];
+    struct song_node * start = &currentPlaylist[0];
     while(start != NULL){
-      if (strcmp(start[j]->artist,writer) == 0){//matching artist found
-        printf("%s : %s | ", start[j]->artist, start[j]->name);
+      if (strcmp(start->artist,writer) == 0){//matching artist found
+        printf("%s : %s | ", start->artist, start->name);
       }
       start = start->next;
     }
   }
 }
-void printlibrary (struct song_node *l[]);
-void shuffle (struct song_node *l[]);
-void delete (struct song_node *l[], struct song_node *target);
-void clear (struct song_node *l[]);
+
+void printlibrary (struct song_node *l[]){
+  int i;
+  for (i = 0; i <size(l); i++){
+    struct song_node * currentPlayList = l[i]; //first node of linkedList
+    struct song_node * start = &currentPlayList[0];
+    char firstArtist[100];
+    strcat(firstArtist,start->artist);
+    char firstLetter[100];
+    strcat(firstLetter,firstArtist);
+    printf("%s list\n", firstLetter);
+    while(start != NULL){
+      printf("%s : %s | ", start->artist, start->name);
+      start=start->next;
+    }
+    printf("\n");
+  }
+}
+
+
+//void shuffle (struct song_node *l[]);
+//void delete (struct song_node *l[], struct song_node *target);
+//void clear (struct song_node *l[]);
