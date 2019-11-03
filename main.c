@@ -32,6 +32,8 @@ int main () {
   printf("========================================================\n");
 
   printf("Testing find node: \n");
-
+  printf ("Looking for moo : cow --> %p\n", findnode (test, "moo", "cow"));
+  printf ("Looking for meow : cat --> %p\n", findnode (test, "meow", "cat"));
+  printf ("Looking for chirp : bird --> %p\n", findnode (test, "chirp", "bird")); 
   return 0;
 }
