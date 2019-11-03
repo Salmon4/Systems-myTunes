@@ -6,12 +6,12 @@
 
 
 void add_node (struct song_node * l [], struct song_node * adding) {
-  l[size (l) + 1] = adding;
+  l[27 + 1] = adding;
 }
 
 struct song_node * search_song (struct song_node * l[], char name [], char writer []) {
   int i = 0;
-  while(i < size (l)) {
+  while(i < 27) {
     struct song_node * now = l[i];
     if (findnode(now, name, writer)) {
       return findnode (now, name, writer);
@@ -23,7 +23,7 @@ struct song_node * search_song (struct song_node * l[], char name [], char write
 
 struct song_node * search_artist (struct song_node *l[], char writer []) {
   int i = 0;
-  while (i < size (l)) {
+  while (i < 27) {
     struct song_node * now = l[i];
     if (findnodeArtist (now, writer)) {
       return findnodeArtist (now, writer);
@@ -35,7 +35,7 @@ struct song_node * search_artist (struct song_node *l[], char writer []) {
 void print_letter (struct song_node *l[], char c) {
   int i,j;
   printf ("All entries starting with %c", c);
-  for (i = 0; i < size (l); i ++) {
+  for (i = 0; i < 27; i ++) {
     struct song_node * now = l[i];
     while (now != NULL) {
       if ( (now -> name)[0] == c) {
