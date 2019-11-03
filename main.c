@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "linkedList.h"
 #include "library.h"
 
-void test_songnode () {
+int main () {
   printf ("LINKED LIST TESTS \n========================================================\n");
   printf ("Testing print_list:\n");
   struct song_node * test;
@@ -119,31 +118,25 @@ void test_songnode () {
   print_list (test);  printf("\n\n");
   printf ("Testing free list\n");
   test = free_list (test);
-  printf ("List: ");
   print_list (test);
-}
 
-void test_library () {
+  printf("=================LIBRARY TESTING========================\n");
   printf ("\nMUSIC LIBRARY TESTS\n");
   printf("========================================================\n");
 
   struct song_node * lib [27];
-  struct song_node * test1;
-    insert_front (test1, "moo", "cow");
-    insert_front (test1, "cluck", "chicken");
-    insert_front (test1, "oink", "pig");
-    insert_front (test1, "baaa", "sheep");
-  struct song_node * test2;
-    insert_front (test2, "woof", "dog");
-    insert_front (test2, "meow", "cat");
-    insert_front (test2, "ssss", "snake");
+  struct song_node * test3;
+    insert_front (test3, "moo", "cow");
+    insert_front (test3, "cluck", "chicken");
+    insert_front (test3, "oink", "pig");
+    insert_front (test3, "baaa", "sheep");
+  struct song_node * test4;
+    insert_front (test4, "woof", "dog");
+    insert_front (test4, "meow", "cat");
+    insert_front (test4, "ssss", "snake");
 
-  add_node (lib,test1);   add_node (lib,test2);
+  add_node (lib,test3);   add_node (lib,test4);
   printlibrary (lib);
-}
 
-int main () {
-  test_songnode ();
-  test_library ();
   return 0;
 }

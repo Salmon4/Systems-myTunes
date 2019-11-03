@@ -5,6 +5,7 @@
 
 void print_list(struct song_node *linkedList){
   struct song_node *start = linkedList;
+  //printf("%p", linkedList);
   while (start != NULL){
     printf("%s : %s | ", start->artist, start->name);
     start = start->next;
