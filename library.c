@@ -92,7 +92,20 @@ void printlibrary (struct song_node *l[]){
   }
 }
 
-
-//void shuffle (struct song_node *l[]);
+void shuffle (struct song_node *l[]){
+  int rand1 = random () % length;
+  int rand2 = random () % length;
+  int rand3 = random () % length;
+  struct song_node *crurentPlaylist;
+  currentPlaylist = l[rand1];
+  print_node(randomElement(currentPlaylist));
+  printf("\n");
+  currentPlaylist = l[rand2];
+  print_node(randomElement(currentPlaylist));
+  printf("\n");
+  currentPlaylist = l[rand3];
+  print_node(randomElement(currentPlaylist));
+  printf("\n");
+}
 //void delete (struct song_node *l[], struct song_node *target);
 //void clear (struct song_node *l[]);
