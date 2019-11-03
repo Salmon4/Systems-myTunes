@@ -3,13 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int size (struct song_node *start [] ) {
-  int ans = 0;
-  while (start [ans] != NULL) {
-    ans ++;
-  }
-  return ans;
-}
+
 
 void add_node (struct song_node * l [], struct song_node * adding) {
   l[size (l) + 1] = adding;
@@ -55,7 +49,7 @@ void print_letter (struct song_node *l[], char c) {
 void print_artist (struct song_node *l[], char writer[]){
   int i,j;
   int exist = 0;
-  for (i = 0; i < size(l) & exist == 0; i++){
+  for (i = 0; i < 27 & exist == 0; i++){
     if (findnodeArtist(l[i],writer) != NULL){
       exist = 1; //it exists and stops for loop
       printf("Artist found! ");
@@ -64,7 +58,7 @@ void print_artist (struct song_node *l[], char writer[]){
   if (exist == 0){
     printf("Artist not found! ");
   }
-  for (j = 0; j < size(l) & exist == 1; j++){
+  for (j = 0; j < 27 & exist == 1; j++){
     struct song_node * currentPlaylist = l[j];
     struct song_node * start = &currentPlaylist[0];
     while(start != NULL){
@@ -78,7 +72,7 @@ void print_artist (struct song_node *l[], char writer[]){
 
 void printlibrary (struct song_node *l[]){
   int i;
-  for (i = 0; i <size(l); i++){
+  for (i = 0; i <27; i++){
     struct song_node * currentPlayList = l[i]; //first node of linkedList
     struct song_node * start = &currentPlayList[0];
     //char firstArtist[100] = "\0";
@@ -95,9 +89,9 @@ void printlibrary (struct song_node *l[]){
 }
 
 void shuffle (struct song_node *l[]){
-  int rand1 = random () % size(l);
-  int rand2 = random () % size(l);
-  int rand3 = random () % size(l);
+  int rand1 = random () % 27;
+  int rand2 = random () % 27;
+  int rand3 = random () % 27;
   struct song_node *currentPlaylist;
   currentPlaylist = l[rand1];
   print_node(randomElement(currentPlaylist));
@@ -113,7 +107,7 @@ void shuffle (struct song_node *l[]){
 void delete (struct song_node *l[], struct song_node *target){
   int i;
   int removed = 0;
-  for (i = 0; i < size(l) & removed == 0; i++){
+  for (i = 0; i < 27 & removed == 0; i++){
     if (findnode(l[i],target->name,target->artist) != NULL){
       deleteSpecific(l[i],target);
       removed = 1;
