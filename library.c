@@ -93,10 +93,10 @@ void printlibrary (struct song_node *l[]){
 }
 
 void shuffle (struct song_node *l[]){
-  int rand1 = random () % length;
-  int rand2 = random () % length;
-  int rand3 = random () % length;
-  struct song_node *crurentPlaylist;
+  int rand1 = random () % size(l);
+  int rand2 = random () % size(l);
+  int rand3 = random () % size(l);
+  struct song_node *currentPlaylist;
   currentPlaylist = l[rand1];
   print_node(randomElement(currentPlaylist));
   printf("\n");
@@ -106,6 +106,10 @@ void shuffle (struct song_node *l[]){
   currentPlaylist = l[rand3];
   print_node(randomElement(currentPlaylist));
   printf("\n");
+}
+
+int main(){
+  return 1;
 }
 //void delete (struct song_node *l[], struct song_node *target);
 //void clear (struct song_node *l[]);
