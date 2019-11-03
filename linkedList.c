@@ -119,17 +119,16 @@ void deleteSpecific (struct song_node * list, struct song_node *target) {
   **/
 }
 
-void free_list (struct song_node * list) {
+struct song_node * free_list (struct song_node * list) {
   struct song_node *start = list;
   struct song_node *temp = list;
   while (start != NULL) {
     start = start -> next;
-    printf ("freeing node: ");
-    print_node (temp);
+    printf ("freeing node: "); print_node (temp); printf ("\n");
     free (temp);
-    printf ("\tList now: "); print_list (list); printf ("\n"); 
     temp = start;
   }
+  return list;
 }
 
 /*

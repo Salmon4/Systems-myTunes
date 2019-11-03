@@ -87,10 +87,9 @@ int main () {
 
   printf("========================================================\n");
   printf ("This is the list: \n");
-  print_list (test);  printf("\n\n"); 
+  print_list (test);  printf("\n\n");
   printf ("Testing free list\n");
-  free_list (test);
-  printf ("list after free_list: ");
+  test = free_list (test); 
   print_list (test);
 
   return 0;
