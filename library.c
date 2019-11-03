@@ -50,7 +50,29 @@ void print_letter (struct song_node *l[], char c) {
   }
 }
 
-void print_artist (struct song_node *l[], char writer[]);
+void print_artist (struct song_node *l[], char writer[]){
+  int i,j;
+  int exist = 0;
+  for (i = 0; i < size(l) & exist == 0; i++){
+    if (findnodeArtist(l[i],writer) != NULL){
+      exist = 1; //it exists and stops for loop
+      printf("Artist found! ");
+    }
+  }
+  if (exist == 0){
+    printf("Artist not found! ");
+  }
+
+  for (j = 0; j < size(l) & exist == 1, j++){
+    struct song_node * start = l[j];
+    while(start != NULL){
+      if (strcmp(start[j]->artist,writer) == 0){//matching artist found
+        printf("%s : %s | ", start[j]->artist, start[j]->name);
+      }
+      start = start->next;
+    }
+  }
+}
 void printlibrary (struct song_node *l[]);
 void shuffle (struct song_node *l[]);
 void delete (struct song_node *l[], struct song_node *target);
