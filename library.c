@@ -152,8 +152,8 @@ void delete (struct song_node *l[], char song[], char writer []){
   for (i = 0; i < 27 & removed == 0; i++){
     if (findnode(l[i],song,writer) != NULL){
       struct song_node * target;
-      target -> name = song;
-      target -> artist = writer; 
+      strcpy(target->name, song);
+      strcpy(target->artist, writer);
       deleteSpecific(l[i],target);
       removed = 1;
     }
