@@ -157,7 +157,19 @@ int main () {
   printf ("\nTesting print_artist: \n");
   print_artist (lib, "allen");
   print_artist (lib, "steve");
-  print_artist (lib, "bob"); 
+  print_artist (lib, "bob");
+
+
+  printf ("\nTesting delete: \n");
+  delete (lib, "song0", "steve");
+  delete (lib, "pew", "allen");
+  printf ("List after deleting song0 and pew:\n");
+  printlibrary (lib);
+  
+
+  printf ("\nTesting clear: \n");
+  clear (lib);
+  printlibrary (lib);
 
   return 0;
 }

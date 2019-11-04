@@ -147,6 +147,17 @@ void shuffle (struct song_node *l[]){
 }
 
 void delete (struct song_node *l[], char song[], char writer []){
+  struct song_node * target;
+  strcpy(target->name, song);
+  strcpy(target->artist, writer);
+  int i;
+  for (i = 0; i < 27; i ++) {
+    struct song_node * now = l[i];
+    if (findnode (now, target -> name, target -> artist) != NULL) {
+      deleteSpecific (now, target);
+    }
+  }
+  /*
   int i;
   int removed = 0;
   for (i = 0; i < 27 & removed == 0; i++){
@@ -158,15 +169,26 @@ void delete (struct song_node *l[], char song[], char writer []){
       removed = 1;
     }
   }
+  */
+}
+
+void delete2 (struct song_node *l[], struct song_node * target){
+  int i;
+  int removed = 0;
+  for (i = 0; i < 27 & removed == 0; i++){
+    if (findnode(l[i],target-> name, target -> artist) != NULL){
+      deleteSpecific(l[i], target);
+      removed = 1;
+    }
+  }
 }
 
 void clear (struct song_node *l[]) {
   int i;
   for (i = 0; i < 27; i ++) {
     struct song_node * now = l[i];
-    while (now != NULL) {
-      now = NULL;
-      now = now -> next;
+    if (now) {
+      delete2 (l, now);
     }
   }
 }
