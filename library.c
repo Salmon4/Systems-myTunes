@@ -132,7 +132,14 @@ void shuffle (struct song_node *l[]){
     }
   }
   printf("\n");
-
+  /*
+  int i = 0;
+  while (i < 27) {
+    int r = random () % 26;
+    print_node (randomElement, l[r]);
+    i ++;
+  }
+  */
   /**
   int i ;
   for (i = 0; i < 4; i ++) {
