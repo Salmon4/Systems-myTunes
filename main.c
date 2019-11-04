@@ -133,5 +133,6 @@ int main () {
   add_node(lib,"pew","allen");
   printlibrary (lib);
 
+  print_letter(lib,'s');
   return 0;
 }

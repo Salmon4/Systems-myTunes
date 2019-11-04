@@ -46,8 +46,17 @@ struct song_node * search_artist (struct song_node *l[], char writer []) {
 }
 
 void print_letter (struct song_node *l[], char c) {
-  int i,j;
-  printf ("All entries starting with %c", c);
+  printf ("\nAll entries starting with %c\n", c);
+  int index;
+  if (c >= 97 && c <= 122){
+    index = c % 97;
+  }
+  else{
+    index = 26;
+  }
+  //int index = find_index(c);
+  print_list(l[index]);
+  /**
   for (i = 0; i < 27; i ++) {
     struct song_node * now = l[i];
     while (now != NULL) {
@@ -57,6 +66,7 @@ void print_letter (struct song_node *l[], char c) {
       now = now -> next;
     }
   }
+  **/
 }
 
 void print_artist (struct song_node *l[], char writer[]){
