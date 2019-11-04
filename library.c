@@ -127,4 +127,14 @@ void delete (struct song_node *l[], struct song_node *target){
     }
   }
 }
-//void clear (struct song_node *l[]);
+
+void clear (struct song_node *l[]) {
+  int i;
+  for (i = 0; i < 27; i ++) {
+    struct song_node * now = l[i];
+    while (now != NULL) {
+      now = NULL;
+      now = now -> next;
+    }
+  }
+}
