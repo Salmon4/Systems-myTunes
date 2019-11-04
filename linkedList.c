@@ -19,6 +19,7 @@ void print_node(struct song_node *linkedList){
 }
 
 
+
 struct song_node * insert_front(struct song_node *linkedList, char newName[], char newArtist[]){
   struct song_node *input = malloc(sizeof(struct song_node));
   strcpy(input->name, newName);
@@ -27,9 +28,8 @@ struct song_node * insert_front(struct song_node *linkedList, char newName[], ch
   return input;
 }
 
+
 struct song_node * insert_alpha(struct song_node *linkedList, char newName[], char newArtist[]){
-
-
   struct song_node *input = malloc(sizeof(struct song_node));
   strcpy(input->artist, newArtist);
   strcpy(input->name, newName);

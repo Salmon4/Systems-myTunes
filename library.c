@@ -4,10 +4,22 @@
 #include <stdlib.h>
 #include <string.h>
 
+int find_index(char a[100]){
+  int letter = a[0];
+  if (letter >= 97 && letter <= 122){
+    return letter % 97;
+  }
+  return 26;
+}
 
-void add_node (struct song_node * l [], struct song_node * adding) {
-  char a = adding -> artist;
-  insert_alpha (l[a - 'a'], adding); 
+void add_node (struct song_node * l[], char name[], char artist[]) {
+
+  int an = find_index(artist);
+  l[an] = insert_alpha(l[an], name, artist);
+  //selected = insert_alpha (selected, name, artist);
+  //print_list(selected);
+  //printf("%d ", an);
+  //printf("\n");
 }
 
 struct song_node * search_song (struct song_node * l[], char name [], char writer []) {
@@ -73,20 +85,20 @@ void print_artist (struct song_node *l[], char writer[]){
 
 void printlibrary (struct song_node *l[]){
   int i;
-  for (i = 0; i <27; i++){
-    struct song_node * currentPlayList = l[i]; //first node of linkedList
-    struct song_node * start = &currentPlayList[0];
-    //char firstArtist[100] = "\0";
-    //strcat(firstArtist,start->artist);
-    //char firstLetter[100] = "\0";
-    //strcat(firstLetter,firstArtist);
-    //printf("%s list\n", firstLetter);
-    while(start != NULL){
-      printf("%s : %s | ", start->artist, start->name);
-      start=start->next;
+  for (i = 0; i < 27; i++){
+    if (l[i] != NULL){
+      if (i != 26){
+        printf("%c list\n", 97 + i);
+      }
+      else{
+        printf("other list\n");
+      }
+      printf(" ");
+      print_list(l[i]);
+      printf("\n");
     }
-    printf("\n");
   }
+  printf("\n");
 }
 
 void shuffle (struct song_node *l[]){

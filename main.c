@@ -123,19 +123,14 @@ int main () {
   printf("=================LIBRARY TESTING========================\n");
   printf ("\nMUSIC LIBRARY TESTS\n");
   printf("========================================================\n");
-
-  struct song_node * lib [27];
-  struct song_node * test3;
-    insert_front (test3, "moo", "cow");
-    insert_front (test3, "cluck", "chicken");
-    insert_front (test3, "oink", "pig");
-    insert_front (test3, "baaa", "sheep");
-  struct song_node * test4;
-    insert_front (test4, "woof", "dog");
-    insert_front (test4, "meow", "cat");
-    insert_front (test4, "ssss", "snake");
-
-  add_node (lib,test3);   add_node (lib,test4);
+  int i;
+  struct song_node * lib[27];
+  for (i = 0; i < 27; i++){
+    lib[i] = NULL;
+  }
+  add_node(lib,"song0","steve");
+  add_node(lib,"sounds","steve");
+  add_node(lib,"pew","allen");
   printlibrary (lib);
 
   return 0;
