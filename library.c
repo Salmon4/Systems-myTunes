@@ -6,7 +6,8 @@
 
 
 void add_node (struct song_node * l [], struct song_node * adding) {
-  l[27 + 1] = adding;
+  char a = adding -> artist;
+  insert_alpha (l[a - 'a'], adding); 
 }
 
 struct song_node * search_song (struct song_node * l[], char name [], char writer []) {
