@@ -147,16 +147,22 @@ void shuffle (struct song_node *l[]){
 }
 
 void delete (struct song_node *l[], char song[], char writer []){
+  struct song_node * found = search_song (l, song, writer);
+  if (found != NULL) {
+    deleteSpecific (l[find_index (found -> artist)], found); 
+  }
+  /*
   struct song_node * target;
   strcpy(target->name, song);
   strcpy(target->artist, writer);
   int i;
   for (i = 0; i < 27; i ++) {
     struct song_node * now = l[i];
-    if (findnode (now, target -> name, target -> artist) != NULL) {
+    if (findnode (now, target -> name, target -> artist)) {
       deleteSpecific (now, target);
     }
   }
+  */
   /*
   int i;
   int removed = 0;
