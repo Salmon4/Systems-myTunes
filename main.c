@@ -161,11 +161,13 @@ int main () {
 
 
   printf ("\nTesting delete: \n");
-  delete (lib, "song0", "steve");
-  delete (lib, "pew", "allen");
-  printf ("List after deleting song0 and pew:\n");
+  //delete (lib, "pew", "allen");
+  printf ("List before deleting song0:\n");
   printlibrary (lib);
-  
+  delete (lib, "song0","steve");
+  printf ("\nList after deleting song0:\n");
+  printlibrary (lib);
+
 
   printf ("\nTesting clear: \n");
   clear (lib);
