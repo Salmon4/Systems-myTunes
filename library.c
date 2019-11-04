@@ -23,6 +23,7 @@ void add_node (struct song_node * l[], char name[], char artist[]) {
 }
 
 struct song_node * search_song (struct song_node * l[], char name [], char writer []) {
+  /**
   int i = 0;
   while(i < 27) {
     struct song_node * now = l[i];
@@ -32,6 +33,9 @@ struct song_node * search_song (struct song_node * l[], char name [], char write
     i ++;
   }
   return NULL;
+  **/
+  int index = find_index(writer);
+  return findnode(l[index],name,writer);
 }
 
 struct song_node * search_artist (struct song_node *l[], char writer []) {

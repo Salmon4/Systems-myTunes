@@ -134,5 +134,15 @@ int main () {
   printlibrary (lib);
 
   print_letter(lib,'s');
+  struct song_node *dummy = NULL;
+  printf("\n");
+  dummy = search_song(lib,"pew","allen");
+  if (dummy != NULL){
+    printf("\nFound pew by allen: \n");
+    print_node(dummy);
+  }
+  else{
+    printf("not found");
+  }
   return 0;
 }
