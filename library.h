@@ -6,5 +6,5 @@ void print_letter (struct song_node *l[], char c);
 void print_artist (struct song_node *l[], char writer[]);
 void printlibrary (struct song_node *l[]);
 void shuffle (struct song_node *l[]);
-void delete (struct song_node *l[], struct song_node *target);
+void delete (struct song_node *l[], char song[], char writer []);
 void clear (struct song_node *l[]);

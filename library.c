@@ -95,7 +95,7 @@ void print_artist (struct song_node *l[], char writer[]){
       start = start->next;
     }
   }
-  printf ("\n"); 
+  printf ("\n");
 }
 
 void printlibrary (struct song_node *l[]){
@@ -146,11 +146,14 @@ void shuffle (struct song_node *l[]){
   */
 }
 
-void delete (struct song_node *l[], struct song_node *target){
+void delete (struct song_node *l[], char song[], char writer []){
   int i;
   int removed = 0;
   for (i = 0; i < 27 & removed == 0; i++){
-    if (findnode(l[i],target->name,target->artist) != NULL){
+    if (findnode(l[i],song,writer) != NULL){
+      struct song_node * target;
+      target -> name = song;
+      target -> artist = writer; 
       deleteSpecific(l[i],target);
       removed = 1;
     }
