@@ -144,5 +144,15 @@ int main () {
   else{
     printf("not found");
   }
+  printf ("\n");
+
+  printf ("\nTesting shuffle: \n");
+  shuffle (lib);
+  shuffle (lib);
+  shuffle (lib);
+  shuffle (lib);
+  shuffle (lib);
+  shuffle (lib);
+
   return 0;
 }
