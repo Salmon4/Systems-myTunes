@@ -7,7 +7,7 @@
 
 void add_node (struct song_node * l [], struct song_node * adding) {
   char a = adding -> artist;
-  insert_alpha (l[a - 'a'], adding); 
+  insert_alpha (l[a - 'a'], adding);
 }
 
 struct song_node * search_song (struct song_node * l[], char name [], char writer []) {
@@ -115,4 +115,14 @@ void delete (struct song_node *l[], struct song_node *target){
     }
   }
 }
-//void clear (struct song_node *l[]);
+
+void clear (struct song_node *l[]) {
+  int i;
+  for (i = 0; i < 27; i ++) {
+    struct song_node * now = l[i];
+    while (now != NULL) {
+      now = NULL;
+      now = now -> next;
+    }
+  }
+}
