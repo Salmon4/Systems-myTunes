@@ -154,5 +154,10 @@ int main () {
   shuffle (lib);
   shuffle (lib);
 
+  printf ("\nTesting print_artist: \n");
+  print_artist (lib, "allen");
+  print_artist (lib, "steve");
+  print_artist (lib, "bob"); 
+
   return 0;
 }

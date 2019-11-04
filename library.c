@@ -95,6 +95,7 @@ void print_artist (struct song_node *l[], char writer[]){
       start = start->next;
     }
   }
+  printf ("\n"); 
 }
 
 void printlibrary (struct song_node *l[]){
