@@ -117,6 +117,15 @@ void printlibrary (struct song_node *l[]){
 }
 
 void shuffle (struct song_node *l[]){
+  int times = 0;
+  while (times < 26) {
+    int r = rand () % 26;
+    if (l[r] != NULL) {
+      print_node (randomElement (l[r])); 
+    }
+    times ++;
+  }
+  /*
   int i;
   for (i = 0; i < 4; i++){
     int chosen = rand() % 26;
@@ -132,6 +141,7 @@ void shuffle (struct song_node *l[]){
     }
   }
   printf("\n");
+  */
   /*
   int i = 0;
   while (i < 27) {
