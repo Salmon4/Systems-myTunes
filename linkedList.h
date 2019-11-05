@@ -16,6 +16,9 @@ struct song_node * findnode (struct song_node * node, char title [] , char write
 struct song_node * findnodeArtist (struct song_node * node, char writer[]);
 
 struct song_node * randomElement (struct song_node * node);
+
 void deleteSpecific (struct song_node * list, struct song_node *target);
+
+struct song_node * deleteSpecific2(struct song_node * list, char name[], char artist[]);
 
 struct song_node * free_list (struct song_node * list);

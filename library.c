@@ -118,14 +118,19 @@ void printlibrary (struct song_node *l[]){
 
 void shuffle (struct song_node *l[]){
   int times = 0;
-  while (times < 26) {
+  while (times < 4) {
     int r = rand () % 26;
     if (l[r] != NULL) {
-      print_node (randomElement (l[r])); 
+      print_node (randomElement (l[r]));
+      printf("\n");
+    }
+    else{
+      times--;
     }
     times ++;
   }
   /*
+  /**
   int i;
   for (i = 0; i < 4; i++){
     int chosen = rand() % 26;
@@ -141,7 +146,7 @@ void shuffle (struct song_node *l[]){
     }
   }
   printf("\n");
-  */
+  **/
   /*
   int i = 0;
   while (i < 27) {
@@ -185,12 +190,8 @@ void shuffle (struct song_node *l[]){
 }
 
 void delete (struct song_node *l[], char song[], char writer []){
-  int index = writer[0] - 'a';
-  struct song_node * target;
-  strcpy(target->name, song);
-  strcpy(target->artist, writer);
-  target -> next = NULL;
-  deleteSpecific (l[index], target);
+  int index = find_index(writer);
+  l[index] = deleteSpecific2(l[index],song, writer);
   /**
   struct song_node * found = search_song (l, song, writer);
   if (found != NULL) {

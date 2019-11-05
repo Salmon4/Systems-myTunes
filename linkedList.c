@@ -119,23 +119,29 @@ void deleteSpecific (struct song_node * list, struct song_node *target) {
     before->next = current->next;
     free(current);
   }
+}
 
-  /**
-  if (start != NULL){
+
+struct song_node * deleteSpecific2(struct song_node * list, char name[], char artist[]){
+  struct song_node * before = NULL;
+  struct song_node * current = list;
+  while (current != NULL){
+  if (strcmp(current->artist,artist) == 0 & strcmp(current->name,name) == 0){
+    if (current == list){
+      list = current->next;
+    }
+    else{
+      before->next = current->next;
+    }
+    free(current);
     return list;
   }
-  if (strcmp(current->artist,target->artist) == 0 && strcmp(current->name,target->name) == 0){
-    free(start);
-    list = list->next;
-  }
-  while(strcmp(start->artist,target->artist) == 0 && strcmp(start->name,target->name) == 0){
-    current = start;
-    start = start->next;
-  }
-  current->next = start->next;
-  free(start);
-  **/
+  before = current;
+  current = current->next;
 }
+return list;
+}
+
 
 struct song_node * free_list (struct song_node * list) {
   struct song_node *start = list;

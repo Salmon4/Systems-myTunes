@@ -147,14 +147,17 @@ int main () {
   printf ("\n");
 
   printf ("\nTesting shuffle: \n");
+  printf("First Shuffle:\n");
   shuffle (lib);
+  printf("Second Shuffle:\n");
   shuffle (lib);
+  printf("Third Shuffle:\n");
   shuffle (lib);
-  shuffle (lib);
-  shuffle (lib);
+  printf("Fourth Shuffle:\n");
   shuffle (lib);
 
-  printf ("\nTesting print_artist: \n");
+
+  printf ("\n\nTesting print_artist: \n");
   print_artist (lib, "allen");
   print_artist (lib, "steve");
   print_artist (lib, "bob");
