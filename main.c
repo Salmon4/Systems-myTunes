@@ -131,6 +131,11 @@ int main () {
   add_node(lib,"song0","steve");
   add_node(lib,"sounds","steve");
   add_node(lib,"pew","allen");
+  add_node (lib, "song1", "oneartist");
+  add_node (lib, "song2", "twoartist");
+  add_node (lib, "song3", "threeartist");
+  add_node (lib, "song4", "fourartist");
+  add_node (lib, "song5", "fiveartist"); 
   printlibrary (lib);
 
   print_letter(lib,'s');
